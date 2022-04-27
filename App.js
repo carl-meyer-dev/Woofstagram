@@ -1,91 +1,85 @@
-import React, { useState } from "react";
+import React from "react";
 import { StatusBar } from "expo-status-bar";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { Formik } from "formik";
 
 const App = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [petName, setPetName] = useState("");
-  const [petDob, setPetDob] = useState("");
-  const [petBreed, setPetBreed] = useState("");
-  const [petToy, setPetToy] = useState("");
-
   return (
-    <KeyboardAwareScrollView contentContainerStyle={styles.scrollViewContainer} keyboardOpeningTime={0}>
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <TextField
-          title="Email"
-          placeholder="email@example.com"
-          value={email}
-          setValue={setEmail}
-        ></TextField>
-        <TextField
-          title="Password"
-          placeholder="secret password"
-          value={password}
-          setValue={setPassword}
-          secureTextEntry={true}
-        ></TextField>
-        <TextField
-          title="Pet's Name"
-          placeholder="your pet's name"
-          value={petName}
-          setValue={setPetName}
-        ></TextField>
-        <TextField
-          title="Pet's Date of Birth"
-          placeholder="dd/mm/yyyy"
-          value={petDob}
-          setValue={setPetDob}
-        ></TextField>
-        <TextField
-          title="Breed"
-          placeholder="your pet's breed"
-          value={petBreed}
-          setValue={setPetBreed}
-        ></TextField>
-        <TextField
-          title="Favorite Toy"
-          placeholder="your pet's favourite toy"
-          value={petToy}
-          setValue={setPetToy}
-        ></TextField>
-        <FormButton text="Submit" onSubmit={onSubmit}></FormButton>
-      </View>
+    <KeyboardAwareScrollView
+      contentContainerStyle={styles.scrollViewContainer}
+      keyboardOpeningTime={0}
+    >
+      <Formik
+        initialValues={{
+          email: "",
+          password: "",
+          petName: "",
+          petDob: "",
+          petBreed: "",
+          petToy: "",
+        }}
+        onSubmit={(values) => console.table(values)}
+      >
+        {({ handleChange, handleBlur, handleSubmit, values }) => (
+          <View style={styles.container}>
+            <StatusBar style="auto" />
+            <TextField
+              title="Email"
+              placeholder="email@example.com"
+              value={values.email}
+              setValue={handleChange("email")}
+              onBlur={handleBlur("email")}
+            ></TextField>
+            <TextField
+              title="Password"
+              placeholder="secret password"
+              value={values.password}
+              setValue={handleChange("password")}
+              onBlur={handleBlur("password")}
+              secureTextEntry={true}
+            ></TextField>
+            <TextField
+              title="Pet's Name"
+              placeholder="your pet's name"
+              value={values.petName}
+              setValue={handleChange("petName")}
+              onBlur={handleBlur("petName")}
+            ></TextField>
+            <TextField
+              title="Pet's Date of Birth"
+              placeholder="dd/mm/yyyy"
+              value={values.petDob}
+              setValue={handleChange("petDob")}
+              onBlur={handleBlur("petDob")}
+            ></TextField>
+            <TextField
+              title="Breed"
+              placeholder="your pet's breed"
+              value={values.petBreed}
+              setValue={handleChange("petBreed")}
+              onBlur={handleBlur("petBreed")}
+            ></TextField>
+            <TextField
+              title="Favorite Toy"
+              placeholder="your pet's favourite toy"
+              value={values.petToy}
+              setValue={handleChange("petToy")}
+              onBlur={handleBlur("petToy")}
+            ></TextField>
+            <FormButton text="Submit" onSubmit={handleSubmit}></FormButton>
+          </View>
+        )}
+      </Formik>
     </KeyboardAwareScrollView>
   );
-
-  function onSubmit() {
-    try {
-      const data = {
-        email,
-        password,
-        petName,
-        petDob,
-        petBreed,
-        petToy,
-      };
-
-      console.table(data);
-    } catch (e) {
-      console.error("Invalid Form Entry!");
-    }
-  }
 };
 
 const TextField = ({
   title,
   value,
   setValue,
+  onBlur,
   placeholder,
   secureTextEntry,
 }) => {
@@ -98,6 +92,7 @@ const TextField = ({
         value={value}
         placeholder={placeholder}
         secureTextEntry={secureTextEntry}
+        onBlur={onBlur}
       />
     </View>
   );
