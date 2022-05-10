@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
 // App-specific components
 
 const WoofCard = (props) => (
-  <View style={woofCardStyles.card}>
+  <View style={[woofCardStyles.card, woofCardStyles.boxShadow]}>
     <Avatar url={props.avatar} />
     <View style={woofCardStyles.title}>
       <Title>{props.name}</Title>
@@ -58,7 +58,15 @@ const woofCardStyles = StyleSheet.create({
     height: 122,
     justifyContent: "center",
     alignItems: "center",
+    marginVertical: 8,
     marginRight: 16,
+  },
+  boxShadow:{
+    shadowColor: '#E7E3EB',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 1,
+    elevation: 5
   },
   title: {
     textAlign: "center",

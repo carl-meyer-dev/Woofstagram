@@ -1,11 +1,8 @@
-import React from "react";
-import Register from "./Register/Register";
-import Home from "./Home/Home";
+import * as React from "react";
+import Navigation from "./Navigation/Nagivation";
 
-const App = () => {
-  return (
-    <Home></Home>
-  );
-};
+const App = () => (
+    <Navigation></Navigation>
+);
 
 export default App;
