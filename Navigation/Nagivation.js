@@ -2,7 +2,10 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import SignInScreen from "../SignIn/SignIn";
+import Login from "../Login/Login";
+import Register from "../Register/Register";
+
+const isLoggedIn = false;
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -24,13 +27,14 @@ const Stack = createStackNavigator();
 // );
 
 const Navigation = () => {
-    return (
-        <NavigationContainer>
-            <Stack.Navigator headerMode="none">
-                <Stack.Screen name="Sign In" component={SignInScreen}/>
-            </Stack.Navigator>
-        </NavigationContainer>
-    );
-}
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
 export default Navigation;
