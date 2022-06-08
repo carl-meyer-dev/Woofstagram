@@ -1,5 +1,5 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import Title from "./Title";
+import Title from "../shared/Title";
 
 const WoofPost = ({ image, title, description }) => (
     <View style={woofPostStyles.layout}>

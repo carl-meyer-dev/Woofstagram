@@ -1,7 +1,7 @@
 import * as React from "react";
 import { SafeAreaView, ScrollView } from "react-native";
 import WoofCard from "./WoofCard";
-import Heading from "./Heading";
+import Heading from "../shared/Heading";
 import WoofPost from "./WoofPost";
 import data from "./Data";
 
