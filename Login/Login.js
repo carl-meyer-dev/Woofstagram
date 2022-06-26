@@ -5,11 +5,10 @@ import { Formik } from "formik";
 import screens from "../core/Screens";
 import WoofTextField from "../shared/WoofTextField/WoofTextField";
 import WoofButton from "../shared/WoofButton/WoofButton";
-import * as SecureStore from "expo-secure-store";
+import { AuthContext } from "../App";
 
 const Login = ({ navigation }) => {
-  const login = async () =>
-    await SecureStore.setItemAsync("userToken", "1234567890");
+  const { signIn } = React.useContext(AuthContext);
 
   return (
     <KeyboardAwareScrollView
@@ -17,19 +16,22 @@ const Login = ({ navigation }) => {
       keyboardOpeningTime={0}
     >
       <Formik
-        initialValues={{ email: "carl@meyer.com", password: "123" }}
+        initialValues={{ username: "carl@meyer.com", password: "123" }}
         onSubmit={(values) => {
-          if (values.email === "carl@meyer.com" && values.password === "123") {
-            login();
-          }
+          let username = values.username;
+          let password = values.password;
+          signIn({username, password});
+          // if (values.username === "carl@meyer.com" && values.password === "123") {
+          //   signIn({username, password})
+          // }
         }}
       >
         {({ handleChange, handleBlur, handleSubmit, values }) => (
           <View style={styles.container}>
             <WoofTextField
-              onChangeText={handleChange("email")}
-              onBlur={handleBlur("email")}
-              value={values.email}
+              onChangeText={handleChange("username")}
+              onBlur={handleBlur("username")}
+              value={values.username}
               placeholder="email@example.com"
             />
             <WoofTextField
@@ -39,7 +41,7 @@ const Login = ({ navigation }) => {
               secureTextEntry={true}
               placeholder="enter password"
             />
-            <WoofButton onPress={handleSubmit} text="Submit" />
+            <WoofButton onPress={handleSubmit} text="Sign In" />
             <WoofButton
               onPress={() => navigation.navigate(screens.Register)}
               text="Register"
