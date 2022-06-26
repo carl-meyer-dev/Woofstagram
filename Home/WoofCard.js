@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import Avatar from "./Avatar";
-import Title from "./Title";
+import Title from "../shared/Title";
 
 const WoofCard = (props) => (
     <View style={[woofCardStyles.card, woofCardStyles.boxShadow]}>
