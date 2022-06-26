@@ -5,8 +5,9 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import { Formik } from "formik";
 import WoofTextField from "../shared/WoofTextField/WoofTextField";
 import WoofButton from "../shared/WoofButton/WoofButton";
+import screens from "../core/Screens";
 
-const Register = () => {
+const Register = ({ navigation }) => {
   return (
     <KeyboardAwareScrollView
       contentContainerStyle={styles.scrollViewContainer}
@@ -81,7 +82,8 @@ const Register = () => {
               setValue={handleChange("petToy")}
               onBlur={handleBlur("petToy")}
             ></WoofTextField>
-            <WoofButton text="Submit" onSubmit={handleSubmit}></WoofButton>
+            <WoofButton text="Register" onSubmit={handleSubmit}></WoofButton>
+            <Text onPress={() => navigation.navigate(screens.Login)}>Sign In</Text>
           </View>
         )}
       </Formik>

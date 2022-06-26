@@ -2,7 +2,10 @@ const screens = {
   Splash: 'Splash',
   Login: 'Login',
   Register: 'Register',
-  Home: 'Home'
+  Root: 'Root',
+  Home: 'Home',
+  Feed: 'Feed',
+  Profile: 'Profile'
 }
 
 export default screens;

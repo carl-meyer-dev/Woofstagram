@@ -1,14 +1,12 @@
 import * as React from "react";
-import { Button, SafeAreaView, ScrollView, Text } from "react-native";
+import { SafeAreaView, ScrollView } from "react-native";
 import WoofCard from "./WoofCard";
 import Heading from "../shared/Heading";
 import WoofPost from "./WoofPost";
 import data from "./Data";
-import { AuthContext } from "../App";
 
 // The screen rendering everything
 const HomeScreen = () => {
-  const { signOut } = React.useContext(AuthContext);
   const { woofs, posts } = data;
 
   return (
@@ -17,8 +15,6 @@ const HomeScreen = () => {
         style={{ paddingLeft: 24, paddingRight: 24 }}
         showsVerticalScrollIndicator={false}
       >
-        <Text>Signed in! Test</Text>
-        <Button title="Sign out" onPress={signOut} />
         <Heading>Trending Woofs</Heading>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {woofs.map((woof) => (

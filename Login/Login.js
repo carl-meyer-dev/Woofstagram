@@ -1,15 +1,16 @@
 import * as React from "react";
-import { Button, StyleSheet, TextInput, View } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Formik } from "formik";
 import screens from "../core/Screens";
 import WoofTextField from "../shared/WoofTextField/WoofTextField";
 import WoofButton from "../shared/WoofButton/WoofButton";
 import { AuthContext } from "../App";
+import Heading from "../shared/Heading";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const Login = ({ navigation }) => {
   const { signIn } = React.useContext(AuthContext);
-
   return (
     <KeyboardAwareScrollView
       contentContainerStyle={styles.scrollViewContainer}
@@ -28,24 +29,29 @@ const Login = ({ navigation }) => {
       >
         {({ handleChange, handleBlur, handleSubmit, values }) => (
           <View style={styles.container}>
-            <WoofTextField
-              onChangeText={handleChange("username")}
-              onBlur={handleBlur("username")}
-              value={values.username}
-              placeholder="email@example.com"
-            />
-            <WoofTextField
-              onChangeText={handleChange("password")}
-              onBlur={handleBlur("password")}
-              value={values.password}
-              secureTextEntry={true}
-              placeholder="enter password"
-            />
-            <WoofButton onPress={handleSubmit} text="Sign In" />
-            <WoofButton
-              onPress={() => navigation.navigate(screens.Register)}
-              text="Register"
-            />
+            <View style={{flex: 1, justifyContent: "flex-end", alignItems: "center"}}>
+              <Heading>Woofstagram</Heading>
+              <Ionicons name="paw" size={32}></Ionicons>
+            </View>
+            <View style={{ flex: 1, justifyContent: "center" }}>
+              <WoofTextField
+                onChangeText={handleChange("username")}
+                onBlur={handleBlur("username")}
+                value={values.username}
+                placeholder="email@example.com"
+              />
+              <WoofTextField
+                onChangeText={handleChange("password")}
+                onBlur={handleBlur("password")}
+                value={values.password}
+                secureTextEntry={true}
+                placeholder="enter password"
+              />
+            </View>
+            <View style={{ flex: 1, alignItems: "center", justifyContent: "space-between", paddingBottom: 16 }}>
+              <WoofButton onPress={handleSubmit} text="Sign In" />
+              <Text onPress={() => navigation.navigate(screens.Register)}>Register</Text>
+            </View>
           </View>
         )}
       </Formik>

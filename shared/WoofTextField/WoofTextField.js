@@ -18,6 +18,7 @@ const WoofTextField = ({
         onChangeText={onChangeText}
         value={value}
         placeholder={placeholder}
+        placeholderTextColor="grey"
         secureTextEntry={secureTextEntry}
         onBlur={onBlur}
         onSubmitEditing={onSubmitEditing}

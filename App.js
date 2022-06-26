@@ -1,15 +1,7 @@
-import * as React from 'react';
-import { Button, Text, TextInput, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import screens from "./core/Screens";
-import Login from "./Login/Login";
-import Home from "./Home/Home";
-import Splash from "./Splash/Splash";
+import * as React from "react";
+import Navigation from "./Navigation/Nagivation";
 
 export const AuthContext = React.createContext();
-
-const Stack = createStackNavigator();
 
 export default function App({ navigation }) {
   const [state, dispatch] = React.useReducer(
@@ -89,20 +81,7 @@ export default function App({ navigation }) {
 
   return (
     <AuthContext.Provider value={authContext}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          {state.isLoading ? (
-            // We haven't finished checking for the token yet
-            <Stack.Screen name={screens.Splash} component={Splash} />
-          ) : state.userToken == null ? (
-            // No token found, user isn't signed in
-            <Stack.Screen name={screens.Login} component={Login} />
-          ) : (
-            // User is signed in
-            <Stack.Screen name={screens.Home} component={Home} />
-          )}
-        </Stack.Navigator>
-      </NavigationContainer>
+      <Navigation state={state} ></Navigation>
     </AuthContext.Provider>
   );
 }
