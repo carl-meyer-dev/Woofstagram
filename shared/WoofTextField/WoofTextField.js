@@ -4,7 +4,7 @@ import React from "react";
 const WoofTextField = ({
   title,
   value,
-  setValue,
+  onChangeText,
   onBlur,
   placeholder,
   secureTextEntry,
@@ -15,7 +15,7 @@ const WoofTextField = ({
       <Text style={styles.woofText}>{title}</Text>
       <TextInput
         style={styles.woofInput}
-        onChangeText={setValue}
+        onChangeText={onChangeText}
         value={value}
         placeholder={placeholder}
         secureTextEntry={secureTextEntry}
