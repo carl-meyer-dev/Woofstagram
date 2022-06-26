@@ -1,7 +1,7 @@
 import * as React from "react";
 import Navigation from "./Navigation/Nagivation";
+import AuthContext from "./Context/AuthContext";
 
-export const AuthContext = React.createContext();
 
 export default function App({ navigation }) {
   const [state, dispatch] = React.useReducer(

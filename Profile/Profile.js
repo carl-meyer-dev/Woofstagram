@@ -1,8 +1,7 @@
 import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import WoofButton from "../shared/WoofButton/WoofButton";
-import * as SecureStore from "expo-secure-store";
-import { AuthContext } from "../App";
+import AuthContext from "../Context/AuthContext";
 
 const ProfileScreen = () => {
   const { signOut } = React.useContext(AuthContext);

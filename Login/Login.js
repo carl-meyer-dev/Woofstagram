@@ -5,9 +5,9 @@ import { Formik } from "formik";
 import screens from "../core/Screens";
 import WoofTextField from "../shared/WoofTextField/WoofTextField";
 import WoofButton from "../shared/WoofButton/WoofButton";
-import { AuthContext } from "../App";
 import Heading from "../shared/Heading";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import AuthContext from "../Context/AuthContext";
 
 const Login = ({ navigation }) => {
   const { signIn } = React.useContext(AuthContext);
