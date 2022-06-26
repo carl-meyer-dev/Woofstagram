@@ -1,9 +1,9 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import React from "react";
 
-const WoofButton = ({ text, onSubmit }) => {
+const WoofButton = ({ text, onPress }) => {
   return (
-    <TouchableOpacity onPress={onSubmit} style={styles.woofButton}>
+    <TouchableOpacity onPress={onPress} style={styles.woofButton}>
       <Text>{text}</Text>
     </TouchableOpacity>
   );
