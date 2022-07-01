@@ -4,42 +4,62 @@ const data = {
         {
             id: "woof-1",
             name: "Rex",
+            dateOfBirth: "26/01/1996",
+            breed: "Labrador",
+            toy: "Ball",
             avatar:
                 "https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=648&q=80",
             caretaker: "Victor Grabarczyk",
             source: "https://unsplash.com/photos/x5oPmHmY3kQ",
+            email: "lab.rador@woof.com",
         },
         {
             id: "woof-2",
             name: "Ball",
+            dateOfBirth: "26/01/1996",
+            breed: "St Bernard",
+            toy: "Bone",
             avatar:
                 "https://images.unsplash.com/photo-1585584114963-503344a119b0?auto=format&fit=crop&h=64&q=80",
             caretaker: "Tatiana Rodriguez",
             source: "https://unsplash.com/photos/J40C1k6Fut0",
+            email: "st.bernard@woof.com",
         },
         {
             id: "woof-3",
             name: "Happy",
+            dateOfBirth: "26/01/1996",
+            breed: "Jack Russel",
+            toy: "KONG",
             avatar:
                 "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&h=64&q=80",
             caretaker: "Marliese Streefland",
             source: "https://unsplash.com/photos/2l0CWTpcChI",
+            email: "jack.russel@woof.com",
         },
         {
             id: "woof-4",
             name: "Fluffy",
+            dateOfBirth: "26/01/1996",
+            breed: "Chihuahua",
+            toy: "Plushie",
             avatar:
                 "https://images.unsplash.com/photo-1554956615-1ba6dc39921b?auto=format&fit=crop&h=64&q=80",
             caretaker: "Nick Fewings",
             source: "https://unsplash.com/photos/rMKXLAIa2OY",
+            email: "chi.huahua@woof.com",
         },
         {
             id: "woof-5",
             name: "Spirit",
+            dateOfBirth: "26/01/1996",
+            breed: "Dachshund",
+            toy: "Stick",
             avatar:
                 "https://images.unsplash.com/photo-1514984879728-be0aff75a6e8?auto=format&fit=crop&h=64&q=80",
             caretaker: "Jamie Street",
             source: "https://unsplash.com/photos/uNNCs5kL70Q",
+            email: "dachs.hund@woof.com",
         },
     ],
     posts: [
