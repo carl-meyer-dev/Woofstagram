@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import WoofButton from "../shared/WoofButton/WoofButton";
+import WoofButton from "../shared/WoofButton";
 import AuthContext from "../Context/AuthContext";
 
 const ProfileScreen = () => {

@@ -3,8 +3,8 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Formik } from "formik";
-import WoofTextField from "../shared/WoofTextField/WoofTextField";
-import WoofButton from "../shared/WoofButton/WoofButton";
+import WoofTextField from "../shared/WoofTextField";
+import WoofButton from "../shared/WoofButton";
 import screens from "../core/Screens";
 
 const Register = ({ navigation }) => {

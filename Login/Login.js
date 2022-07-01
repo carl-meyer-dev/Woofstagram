@@ -3,8 +3,8 @@ import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Formik } from "formik";
 import screens from "../core/Screens";
-import WoofTextField from "../shared/WoofTextField/WoofTextField";
-import WoofButton from "../shared/WoofButton/WoofButton";
+import WoofTextField from "../shared/WoofTextField";
+import WoofButton from "../shared/WoofButton";
 import Heading from "../shared/Heading";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import AuthContext from "../Context/AuthContext";
@@ -48,8 +48,8 @@ const Login = ({ navigation }) => {
                 placeholder="enter password"
               />
             </View>
-            <View style={{ flex: 1, alignItems: "center", justifyContent: "space-between", paddingBottom: 16 }}>
-              <WoofButton onPress={handleSubmit} text="Sign In" />
+            <View style={{ flex: 1, alignItems: "center", justifyContent: "space-around" }}>
+              <WoofButton onPress={handleSubmit} text="Login" />
               <Text onPress={() => navigation.navigate(screens.Register)}>Register</Text>
             </View>
           </View>

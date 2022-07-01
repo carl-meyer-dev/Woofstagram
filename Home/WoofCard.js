@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import Avatar from "./Avatar";
+import Avatar from "../shared/Avatar";
 import Title from "../shared/Title";
 
 const WoofCard = (props) => (
