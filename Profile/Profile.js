@@ -6,6 +6,7 @@ import Avatar from "../shared/Avatar";
 import Data from "../Home/Data";
 import Heading from "../shared/Heading";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import ProfileItem from "./ProfileItem";
 
 const ProfileScreen = () => {
   const { signOut } = React.useContext(AuthContext);
@@ -18,51 +19,11 @@ const ProfileScreen = () => {
         <Heading>{profile.name}</Heading>
       </View>
       <View style={styles.profileDetails}>
-        <View style={styles.profileItem}>
-          <View style={{flexDirection: "row", alignItems: "center", backgroundColor: "grey"}}>
-            <Ionicons name="paw" size={32}></Ionicons>
-            <Text style={{paddingHorizontal: 8}}>Date Of Birth</Text>
-          </View>
-          <View style={{backgroundColor: "orange"}}>
-            <Text style={{padding: 8}}>{profile.dateOfBirth}</Text>
-          </View>
-        </View>
-        <View style={styles.profileItem}>
-          <View style={{flexDirection: "row", alignItems: "center", backgroundColor: "grey"}}>
-            <Ionicons name="paw" size={32}></Ionicons>
-            <Text style={{paddingHorizontal: 8}}>Breed</Text>
-          </View>
-          <View style={{backgroundColor: "orange"}}>
-            <Text style={{padding: 8}}>{profile.breed}</Text>
-          </View>
-        </View>
-        <View style={styles.profileItem}>
-          <View style={{flexDirection: "row", alignItems: "center", backgroundColor: "grey"}}>
-            <Ionicons name="paw" size={32}></Ionicons>
-            <Text style={{paddingHorizontal: 8}}>Favorite Toy</Text>
-          </View>
-          <View style={{backgroundColor: "orange"}}>
-            <Text style={{padding: 8}}>{profile.toy}</Text>
-          </View>
-        </View>
-        <View style={styles.profileItem}>
-          <View style={{flexDirection: "row", alignItems: "center", backgroundColor: "grey"}}>
-            <Ionicons name="paw" size={32}></Ionicons>
-            <Text style={{paddingHorizontal: 8}}>Caretaker</Text>
-          </View>
-          <View style={{backgroundColor: "orange"}}>
-            <Text style={{padding: 8}}>{profile.caretaker}</Text>
-          </View>
-        </View>
-        <View style={styles.profileItem}>
-          <View style={{flexDirection: "row", alignItems: "center", backgroundColor: "grey"}}>
-            <Ionicons name="paw" size={32}></Ionicons>
-            <Text style={{paddingHorizontal: 8}}>Email</Text>
-          </View>
-          <View style={{backgroundColor: "orange"}}>
-            <Text style={{padding: 8}}>{profile.email}</Text>
-          </View>
-        </View>
+        <ProfileItem description="Date Of Birth" value={profile.dateOfBirth}></ProfileItem>
+        <ProfileItem description="Breed" value={profile.breed}></ProfileItem>
+        <ProfileItem description="Favorite Toy" value={profile.toy}></ProfileItem>
+        <ProfileItem description="CareTaker" value={profile.caretaker}></ProfileItem>
+        <ProfileItem description="Email" value={profile.email}></ProfileItem>
       </View>
       <View style={styles.profileFooter}>
         <WoofButton text="Log out" onPress={signOut} />
