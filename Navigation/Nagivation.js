@@ -47,7 +47,8 @@ const Navigation = ({ state }) => {
     })}>
       <Tab.Screen name={screens.Home} component={HomeScreen} />
       <Tab.Screen name={screens.Feed} component={FeedScreen} />
-      <Tab.Screen name={screens.Profile} component={ProfileScreen2} />
+      <Tab.Screen name={screens.Profile} component={ProfileScreen} />
+      <Tab.Screen name="Profile 2" component={ProfileScreen2} />
     </Tab.Navigator>
   );
 

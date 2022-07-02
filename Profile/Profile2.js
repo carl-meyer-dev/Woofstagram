@@ -1,16 +1,21 @@
 import * as React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import WoofButton from "../shared/WoofButton";
 import AuthContext from "../Context/AuthContext";
 import Data from "../Home/Data";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Formik } from "formik";
-import { StatusBar } from "expo-status-bar";
 import WoofTextField from "../shared/WoofTextField";
+import Avatar from "../shared/Avatar";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const ProfileScreen2 = () => {
   const { signOut } = React.useContext(AuthContext);
   const profile = Data.woofs[0];
+
+  const save = (values) => {
+    console.log(values);
+  };
 
   return (
     <KeyboardAwareScrollView
@@ -24,13 +29,21 @@ const ProfileScreen2 = () => {
           petDob: profile.dateOfBirth,
           petBreed: profile.breed,
           petToy: profile.toy,
-          caretaker: profile.caretaker
+          caretaker: profile.caretaker,
         }}
-        onSubmit={(values) => console.table(values)}
+        onSubmit={(values) => save(values)}
       >
         {({ handleChange, handleBlur, handleSubmit, values }) => (
-          <View style={styles.container}>
-            <StatusBar style="auto" />
+          <SafeAreaView style={styles.container}>
+            <View style={styles.toolbar}>
+              <Text onPress={signOut} style={{ paddingHorizontal: 8 }}>
+                Sign Out
+              </Text>
+              <Ionicons name="exit-outline" size={32}></Ionicons>
+            </View>
+            <View style={styles.profileHeading}>
+              <Avatar url={profile.avatar}></Avatar>
+            </View>
             <WoofTextField
               title="Email"
               placeholder="email@example.com"
@@ -69,13 +82,12 @@ const ProfileScreen2 = () => {
             <WoofTextField
               title="Caretaker"
               placeholder="your pet's owner"
-              value={values.petToy}
-              setValue={handleChange("petToy")}
-              onBlur={handleBlur("petToy")}
+              value={values.caretaker}
+              setValue={handleChange("caretaker")}
+              onBlur={handleBlur("caretaker")}
             ></WoofTextField>
             <WoofButton text="Save" onSubmit={handleSubmit}></WoofButton>
-            <Text onPress={signOut}>Sign Out</Text>
-          </View>
+          </SafeAreaView>
         )}
       </Formik>
     </KeyboardAwareScrollView>
@@ -83,10 +95,14 @@ const ProfileScreen2 = () => {
 };
 
 const styles = StyleSheet.create({
-  title: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: "bold",
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "whitesmoke",
+  },
+  scrollViewContainer: {
+    flexGrow: 1,
   },
   profileHeading: {
     width: "100%",
@@ -94,65 +110,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     // backgroundColor: "red",
   },
-  profileDetails: {
-    // backgroundColor: "yellow",
-    width: "100%",
-    flex: 1,
-    justifyContent: "space-evenly",
-  },
-  profileItem: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    // backgroundColor: "blue",
-    width: "100%",
-  },
-  profileFooter: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    // backgroundColor: "green",
-    width: "100%",
-  },
   toolbar: {
     flexDirection: "row",
     // backgroundColor: "grey",
     justifyContent: "flex-end",
+    alignItems: "center",
     width: "100%",
-  },
-  scrollViewContainer: {
-    flexGrow: 1,
-  },
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "whitesmoke",
-  },
-  formContainer: {
-    borderRadius: 20,
-    padding: 8,
-  },
-  formText: {
-    padding: 8,
-    color: "black",
-  },
-  formInput: {
-    height: 40,
-    width: 200,
-    borderRadius: 8,
-    padding: 8,
-    color: "black",
-    backgroundColor: "white",
-  },
-  formButton: {
-    borderRadius: 8,
-    backgroundColor: "burlywood",
-    margin: 16,
-    width: 150,
-    height: 40,
-    alignItems: "center",
-    justifyContent: "center",
+    paddingHorizontal: 8,
   },
 });
 
