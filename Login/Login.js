@@ -49,8 +49,8 @@ const Login = ({ navigation }) => {
               />
             </View>
             <View style={{ flex: 1, alignItems: "center", justifyContent: "space-around" }}>
-              <WoofButton onPress={handleSubmit} text="Login" />
-              <Text onPress={() => navigation.navigate(screens.Register)}>Register</Text>
+              <WoofButton onPress={handleSubmit} text="Sign In" />
+              <Text onPress={() => navigation.navigate(screens.Register)}>Sign Up</Text>
             </View>
           </View>
         )}
