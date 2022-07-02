@@ -6,11 +6,10 @@ import Login from "../Login/Login";
 import screens from "../core/Screens";
 import HomeScreen from "../Home/Home";
 import FeedScreen from "../Feed/Feed";
-import ProfileScreen from "../Profile/Profile";
 import Splash from "../Splash/Splash";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Register from "../Register/Register";
-import ProfileScreen2 from "../Profile/Profile2";
+import ProfileScreen from "../Profile/Profile";
 
 const Navigation = ({ state }) => {
   const Tab = createBottomTabNavigator();
@@ -48,7 +47,6 @@ const Navigation = ({ state }) => {
       <Tab.Screen name={screens.Home} component={HomeScreen} />
       <Tab.Screen name={screens.Feed} component={FeedScreen} />
       <Tab.Screen name={screens.Profile} component={ProfileScreen} />
-      <Tab.Screen name="Profile 2" component={ProfileScreen2} />
     </Tab.Navigator>
   );
 
