@@ -1,16 +1,14 @@
 import * as React from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 import WoofButton from "../shared/WoofButton";
-import AuthContext from "../Context/AuthContext";
 import Data from "../Home/Data";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Formik } from "formik";
 import WoofTextField from "../shared/WoofTextField";
 import Avatar from "../shared/Avatar";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import SignOutButton from "./SignOutButton";
 
 const ProfileScreen = () => {
-  const { signOut } = React.useContext(AuthContext);
   const profile = Data.woofs[0];
 
   const save = (values) => {
@@ -36,10 +34,7 @@ const ProfileScreen = () => {
         {({ handleChange, handleBlur, handleSubmit, values }) => (
           <SafeAreaView style={styles.container}>
             <View style={styles.toolbar}>
-              <Text onPress={signOut} style={{ paddingHorizontal: 8 }}>
-                Sign Out
-              </Text>
-              <Ionicons name="exit-outline" size={32}></Ionicons>
+              <SignOutButton></SignOutButton>
             </View>
             <View style={styles.profileHeading}>
               <Avatar url={profile.avatar}></Avatar>
@@ -108,13 +103,9 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
-    // backgroundColor: "red",
   },
   toolbar: {
-    flexDirection: "row",
-    // backgroundColor: "grey",
-    justifyContent: "flex-end",
-    alignItems: "center",
+    alignItems: "flex-end",
     width: "100%",
     paddingHorizontal: 8,
   },

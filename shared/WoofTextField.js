@@ -11,7 +11,7 @@ const WoofTextField = ({
   onSubmitEditing,
 }) => {
   return (
-    <View style={styles.woofContainer}>
+    <View style={styles.woofTextFieldContainer}>
       <Text style={styles.woofText}>{title}</Text>
       <TextInput
         style={styles.woofInput}
@@ -28,7 +28,7 @@ const WoofTextField = ({
 };
 
 const styles = StyleSheet.create({
-  woofContainer: {
+  woofTextFieldContainer: {
     borderRadius: 20,
     padding: 8,
   },
