@@ -10,6 +10,8 @@ const styles = StyleSheet.create({
         height: 64,
         margin: 12,
         borderRadius: 64 / 2,
+        borderWidth: 2,
+        borderColor: "burlywood"
     }
 });
 

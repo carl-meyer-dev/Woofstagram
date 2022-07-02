@@ -43,6 +43,8 @@ const styles = StyleSheet.create({
     padding: 8,
     color: "black",
     backgroundColor: "white",
+    borderWidth: 1,
+    borderColor: "burlywood"
   },
 });
 
