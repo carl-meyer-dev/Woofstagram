@@ -9,11 +9,13 @@ const WoofTextField = ({
   placeholder,
   secureTextEntry,
   onSubmitEditing,
+  ...props
 }) => {
   return (
     <View style={styles.woofTextFieldContainer}>
       <Text style={styles.woofText}>{title}</Text>
       <TextInput
+        {...props}
         style={styles.woofInput}
         onChangeText={onChangeText}
         value={value}
@@ -22,6 +24,7 @@ const WoofTextField = ({
         secureTextEntry={secureTextEntry}
         onBlur={onBlur}
         onSubmitEditing={onSubmitEditing}
+        width={props.width ? props.width : 200}
       />
     </View>
   );
@@ -37,14 +40,12 @@ const styles = StyleSheet.create({
     color: "black",
   },
   woofInput: {
-    height: 40,
-    width: 200,
     borderRadius: 8,
     padding: 8,
     color: "black",
     backgroundColor: "white",
     borderWidth: 1,
-    borderColor: "burlywood"
+    borderColor: "burlywood",
   },
 });
 

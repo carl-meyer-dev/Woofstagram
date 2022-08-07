@@ -4,7 +4,7 @@ const screens = {
   Register: 'Register',
   Root: 'Root',
   Home: 'Home',
-  Feed: 'Feed',
+  Post: 'Post',
   Profile: 'Profile'
 }
 

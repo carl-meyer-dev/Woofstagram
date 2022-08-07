@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Login from "../Login/Login";
 import screens from "../core/Screens";
 import HomeScreen from "../Home/Home";
-import FeedScreen from "../Feed/Feed";
+import PostScreen from "../Post/Post";
 import Splash from "../Splash/Splash";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Register from "../Register/Register";
@@ -27,10 +27,10 @@ const Navigation = ({ state }) => {
               ? 'home'
               : 'home-outline';
             break;
-          case screens.Feed:
+          case screens.Post:
             iconName = focused
-              ? 'paw'
-              : 'paw-outline';
+              ? 'add-circle'
+              : 'add-circle-outline';
             break;
           case screens.Profile:
             iconName = focused
@@ -45,7 +45,7 @@ const Navigation = ({ state }) => {
       tabBarActiveTintColor: 'burlywood',
     })}>
       <Tab.Screen name={screens.Home} component={HomeScreen} />
-      <Tab.Screen name={screens.Feed} component={FeedScreen} />
+      <Tab.Screen name={screens.Post} component={PostScreen} />
       <Tab.Screen name={screens.Profile} component={ProfileScreen} />
     </Tab.Navigator>
   );

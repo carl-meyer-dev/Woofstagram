@@ -3,9 +3,9 @@ import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Formik } from "formik";
 import screens from "../core/Screens";
-import WoofTextField from "../shared/WoofTextField";
-import WoofButton from "../shared/WoofButton";
-import Heading from "../shared/Heading";
+import WoofTextField from "../components/WoofTextField";
+import WoofButton from "../components/WoofButton";
+import Heading from "../components/Heading";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import AuthContext from "../Context/AuthContext";
 

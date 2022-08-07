@@ -1,11 +1,11 @@
 import * as React from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
-import WoofButton from "../shared/WoofButton";
+import WoofButton from "../components/WoofButton";
 import Data from "../Home/Data";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Formik } from "formik";
-import WoofTextField from "../shared/WoofTextField";
-import Avatar from "../shared/Avatar";
+import WoofTextField from "../components/WoofTextField";
+import Avatar from "../components/Avatar";
 import SignOutButton from "./SignOutButton";
 
 const ProfileScreen = () => {
