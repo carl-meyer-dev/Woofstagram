@@ -3,7 +3,11 @@ import React from "react";
 
 const WoofButton = ({ text, onPress }) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.woofButton}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={styles.woofButton}
+      activeOpacity={0.8}
+    >
       <Text>{text}</Text>
     </TouchableOpacity>
   );

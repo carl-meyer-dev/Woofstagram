@@ -43,45 +43,45 @@ const ProfileScreen = () => {
               title="Email"
               placeholder="email@example.com"
               value={values.email}
-              setValue={handleChange("email")}
+              onChangeText={handleChange("email")}
               onBlur={handleBlur("email")}
             ></WoofTextField>
             <WoofTextField
               title="Pet's Name"
               placeholder="your pet's name"
               value={values.petName}
-              setValue={handleChange("petName")}
+              onChangeText={handleChange("petName")}
               onBlur={handleBlur("petName")}
             ></WoofTextField>
             <WoofTextField
               title="Pet's Date of Birth"
               placeholder="dd/mm/yyyy"
               value={values.petDob}
-              setValue={handleChange("petDob")}
+              onChangeText={handleChange("petDob")}
               onBlur={handleBlur("petDob")}
             ></WoofTextField>
             <WoofTextField
               title="Breed"
               placeholder="your pet's breed"
               value={values.petBreed}
-              setValue={handleChange("petBreed")}
+              onChangeText={handleChange("petBreed")}
               onBlur={handleBlur("petBreed")}
             ></WoofTextField>
             <WoofTextField
               title="Favorite Toy"
               placeholder="your pet's favourite toy"
               value={values.petToy}
-              setValue={handleChange("petToy")}
+              onChangeText={handleChange("petToy")}
               onBlur={handleBlur("petToy")}
             ></WoofTextField>
             <WoofTextField
               title="Caretaker"
               placeholder="your pet's owner"
               value={values.caretaker}
-              setValue={handleChange("caretaker")}
+              onChangeText={handleChange("caretaker")}
               onBlur={handleBlur("caretaker")}
             ></WoofTextField>
-            <WoofButton text="Save" onSubmit={handleSubmit}></WoofButton>
+            <WoofButton text="Save" onPress={() => handleSubmit()}></WoofButton>
           </SafeAreaView>
         )}
       </Formik>
