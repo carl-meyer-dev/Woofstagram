@@ -29,16 +29,16 @@ const PostScreen = () => (
         <SafeAreaView style={styles.container}>
           <WoofImagePicker></WoofImagePicker>
           <WoofTextField
-            title="Title"
-            placeholder="My Woofer is a floofer"
+            title="Post Title"
+            placeholder="Enter a title for your post"
             value={values.title}
             onChangeText={handleChange("title")}
             onBlur={handleBlur("title")}
             width={300}
           ></WoofTextField>
           <WoofTextField
-            title="Description"
-            placeholder="A floofer is a big ol' Woofer, but shouldn't be confused with a growler. Steer clear of growlers!"
+            title="Post Body"
+            placeholder="Write something awesome..."
             value={values.description}
             onChangeText={handleChange("description")}
             onBlur={handleBlur("description")}
