@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Button, SafeAreaView, StyleSheet } from "react-native";
 import { Formik } from "formik";
-import WoofTextField from "../components/WoofTextField";
-import WoofButton from "../components/WoofButton";
+import WoofTextField from "../../components/WoofTextField";
+import WoofButton from "../../components/WoofButton";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import WoofImagePicker from "../components/WoofImagePicker";
+import WoofImagePicker from "../../components/WoofImagePicker";
 
 const post = (values) => {
   console.log(values);

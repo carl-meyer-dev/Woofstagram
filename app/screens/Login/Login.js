@@ -1,13 +1,13 @@
 import * as React from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Formik } from "formik";
-import screens from "../core/Screens";
-import WoofTextField from "../components/WoofTextField";
-import WoofButton from "../components/WoofButton";
-import Heading from "../components/Heading";
+import screens from "../../constants/Screens";
+import WoofTextField from "../../components/WoofTextField";
+import WoofButton from "../../components/WoofButton";
+import Heading from "../../components/Heading";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import AuthContext from "../Context/AuthContext";
+import AuthContext from "../../contexts/AuthContext";
 
 const Login = ({ navigation }) => {
   const { signIn } = React.useContext(AuthContext);

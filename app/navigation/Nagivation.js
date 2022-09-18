@@ -2,14 +2,14 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Login from "../Login/Login";
-import screens from "../core/Screens";
-import HomeScreen from "../Home/Home";
-import PostScreen from "../Post/Post";
-import Splash from "../Splash/Splash";
+import Login from "../screens/Login/Login";
+import screens from "../constants/Screens";
+import HomeScreen from "../screens/Home/Home";
+import PostScreen from "../screens/Post/Post";
+import Splash from "../screens/Splash/Splash";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import Register from "../Register/Register";
-import ProfileScreen from "../Profile/Profile";
+import Register from "../screens/Register/Register";
+import ProfileScreen from "../screens/Profile/Profile";
 
 const Navigation = ({ state }) => {
   const Tab = createBottomTabNavigator();

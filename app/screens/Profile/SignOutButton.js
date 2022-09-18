@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import AuthContext from "../Context/AuthContext";
+import AuthContext from "../../contexts/AuthContext";
 import React from "react";
 
 const SignOutButton = () => {

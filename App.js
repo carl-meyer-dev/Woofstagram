@@ -1,6 +1,6 @@
 import * as React from "react";
-import Navigation from "./Navigation/Nagivation";
-import AuthContext from "./Context/AuthContext";
+import Navigation from "./app/navigation/Nagivation";
+import AuthContext from "./app/contexts/AuthContext";
 
 
 export default function App({ navigation }) {
