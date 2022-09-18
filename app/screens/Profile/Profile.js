@@ -1,12 +1,13 @@
 import * as React from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import WoofButton from "../../components/WoofButton";
-import Data from "../Home/Data";
+import Data from "../../api/Data";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Formik } from "formik";
 import WoofTextField from "../../components/WoofTextField";
 import Avatar from "../../components/Avatar";
 import SignOutButton from "./SignOutButton";
+import { clearData } from "../../api/LocalStorage";
 
 const ProfileScreen = () => {
   const profile = Data.woofs[0];
@@ -14,6 +15,10 @@ const ProfileScreen = () => {
   const save = (values) => {
     console.log(values);
   };
+
+  const clearLocalStorage = () => {
+    clearData().then(r => console.log('Done'));
+  }
 
   return (
     <KeyboardAwareScrollView
@@ -82,6 +87,7 @@ const ProfileScreen = () => {
               onBlur={handleBlur("caretaker")}
             ></WoofTextField>
             <WoofButton text="Save" onPress={() => handleSubmit()}></WoofButton>
+            <WoofButton text="Clear Data" onPress={() => clearLocalStorage()}></WoofButton>
           </SafeAreaView>
         )}
       </Formik>
